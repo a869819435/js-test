@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p id="js">java_script</p>
+<div id="list">
+    <p id="se">JavaSE</p>
+    <p id="ee">JavaEE</p>
+    <p id="me">JavaME</p>
+</div>
+<script type="text/javascript">
+    let js = document.getElementById('js');
+    let list = document.getElementById('list');
+    //list.appendChild(js); // 追加到后面
+
+    // 创建一个p标签节点
+    let newP = document.createElement('p');
+    newP.id = 'newP';
+    newP.innerText = 'Hello world';
+    list.append(newP);
+
+    // 创建一个标签节点(通过属性，设置任意的值)
+    let myScript = document.createElement('script');
+    // 标签属性，属性值
+    myScript.setAttribute('type','text/javascript');
+    list.append(myScript);
+
+    // 获取body数组,需要用Tag标签名
+    let body = document.getElementsByTagName('body');
+    body[0].setAttribute('style','background-color: green;');
+
+    // 将x节点位置插入到y节点前(x,y)
+    let ee = document.getElementById('ee');
+    let js = document.getElementById('js');
+    let list = document.getElementById('list');
+    list.insertBefore(js,ee);
+
+</script>
+
+</body>
+</html>

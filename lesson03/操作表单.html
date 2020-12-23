@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
+</head>
+<body>
+    <!--  表单提交事件
+      onsubmit = 绑定一个提交检测的函数 true，false
+     将这个结果返回给表单，使用onsubmit接收
+      -->
+    <form action="#" method="post" onsubmit="return loginTest()">
+        <p>
+            <span>用户名：</span>
+            <input type="text" id="username" name="username" />
+        </p>
+        <p>
+            <span>密码：</span>
+            <input type="password" id="password"/>
+        </p>
+        <!-- 提交的时候密码不会显示加密之后的长度-->
+        <input type="hidden" id="md5-password" name="password">
+        <p>
+            <!-- 多选框的值就是定义好的value-->
+            <span>性别：</span>
+            <input type="radio" id="boy" name="sex_radio" value="boy"/>男
+            <input type="radio" id="girl" name="sex_radio" value="girl"/>女
+        </p>
+        <p>
+            <!-- 绑定点击事件-->
+            <button type="submit" onclick="loginTest()">提交</button>
+        </p>
+    </form>
+
+    <script>
+        // 得到输入框的值
+        let input_text = document.getElementById('username');
+        // 修改输入框的值
+        //input_text.value = '123';
+
+        let input_password = document.getElementById('password');
+        let md5pwd = document.getElementById('md5-password');
+
+        function loginTest(){
+            //console.log(input_text.value);
+            // 提交的时候密码不会显示加密之后的长度
+            md5pwd.value = md5(input_password.value);
+            //console.log(input_password.value);
+            // 获取性别单选框的取值
+            let sex_radio = document.getElementsByName('sex_radio');
+            let checkedValue = sex_radio[0].value;
+            for (let i = 0; i < sex_radio.length; i++) {
+                if (sex_radio[i].checked === true){
+                    checkedValue = sex_radio[i].value;
+                    break;
+                }
+            }
+            //console.log(checkedValue);
+            // 判断校验表单内容
+            return true;
+        }
+
+    </script>
+</body>
+</html>

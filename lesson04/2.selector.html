@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    // 原生js，选择器少，不好记忆
+    // js标签
+    document.getElementsByTagName('');
+    // js id
+    document.getElementById('');
+    // js类
+    document.getElementsByClassName('');
+
+    // jQuery选择器(css中的选择器全部可以用)
+    $('p').click(); // 标签选择器
+    $('#id').click(); // id选择器
+    $('.class').click(); // class选择器
+
+    $('p').mousedown() // 按下
+    $('p').mouseenter() // 进入（穿过）元素
+    $('p').mouseleave() // 离开
+    $('p').mousemove() // 移动
+    $('p').mouseout() // 元素上移开时
+    $('p').mouseover() // 点击结束
+    $('p').mouseup() // 松开鼠标按钮
+
+
+    $('p').keydown() // 在页面内对键盘按键做出回应
+    $('p').keypress() // 当键盘或按钮被按下时，发生 keypress 事件
+    $('p').keyup() // 当按钮被松开时，发生 keyup 事件。它发生在当前获得焦点的元素上
+
+</script>
+
+</body>
+</html>

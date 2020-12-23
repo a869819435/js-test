@@ -66,6 +66,46 @@ let Bird = {
 }
 // 改变小明的原型（类似继承）
 xiaoMing.__proto__ = Bird;
+//给Bird增加一个方法,Es6之前的写法
+Bird.prototype.hello = function (){
+    alert('Hello');
+};
+
+
+// es6之后，定义一个学生的类
+class Student{
+
+    constructor(name) {
+        this.name = name;
+    }
+
+    hello(){
+        alert('hello');
+    }
+}
+// 实例化对象
+let xm = new Student('xiaoMing');
+let xh = new Student('xiaoHong');
+// 调用方法
+xm.hello();
+xh.hello();
+
+
+// 继承学生对象
+class PrimaryStudents extends Student{
+    constructor(name,grade) {
+        super(name);
+        this.grade = grade;
+    }
+
+    myGrade(){
+        alert('?????');
+    }
+}
+// 实例化小学生对象
+let xxs = new PrimaryStudents('xxs',10);
+xxs.hello();
+xxs.myGrade();
 
 
 
