@@ -10,7 +10,7 @@
 
 <ul id="test-ul">
     <li class="js">JavaScript</li>
-    <li class="python">Python</li>
+    <li name="python">Python</li>
     <li class="c">C</li>
 </ul>
 
@@ -18,9 +18,19 @@
     // 原生js
     //document.getElementById('');
 
-    $('#test-ul li[name=python]').text();
-    $('#test-ul').html();
+    $('#test-ul li[name=python]').text(); // 获取值
+    $('#test-ul li[name=python]').text('change'); // 设置值
+    $('#test-ul li[name=python]').html();
+    $('#test-ul li[name=python]').html('<strong>change</strong>');
 
+
+    $('#test-ul li[name=python]').css('color','red'); // 单个值
+    $('#test-ul li[name=python]').css({'color':'red','background':'blue'}); // 多个值
+
+
+    $('#test-ul li[name=python]').hide(); // 隐藏
+    $('#test-ul li[name=python]').show(); // 显示
+    $('#test-ul li[name=python]').toggle(); // 切换显隐性
 </script>
 
 
